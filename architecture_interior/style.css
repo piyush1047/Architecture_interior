@@ -1,0 +1,548 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+*{
+    font-family: "Quicksand", sans-serif;  
+}
+/*-- Inspiration taken from abdo steif -->
+/* --> https://codepen.io/abdosteif/pen/bRoyMb?editors=1100*/
+
+/* Navbar section */
+
+.nav {
+    width: 100%;
+    height: 85px;
+    position: fixed;
+    line-height: 60px;
+    text-align: center;
+    background-color:rgba(0,0,0,0.1);
+}
+
+.nav div.logo {
+    float: left;
+    width: auto;
+    height: auto;
+    padding-left: 3rem;
+}
+
+.nav div.logo a {
+    text-decoration: none;
+    color: #000;
+    font-size: 2.5rem;
+    font-family: "Quicksand", sans-serif;  
+
+}
+
+.nav div.logo a:hover {
+    color: rgb(255, 146, 5);
+}
+
+.nav div.main_list {
+    height: 65px;
+    float: right;   
+}
+
+.nav div.main_list ul {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    list-style: none;
+    font-family: "Quicksand", sans-serif;  
+    margin: 0;
+    padding: 0;
+}
+
+.nav div.main_list ul li {
+    width: auto;
+    height: 50px;
+    padding: 5px;
+    padding-right: 3rem;
+    font-family: "Quicksand", sans-serif;  
+
+}
+
+.nav div.main_list ul li a {
+    text-decoration: none;
+    color: #000000;
+    line-height: 65px;
+    font-size: 1.5rem;
+    font-weight: 500 !important;
+    font-family: "Quicksand", sans-serif;  
+
+}
+
+.nav div.main_list ul li a:hover {
+    color: burlywood;
+}
+
+
+/* Home section */
+
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://addison.bold-themes.com/main-demo/wp-content/uploads/sites/3/2017/05/image-slider-01.jpg');
+    background-position: center top;
+	background-size:cover;
+}
+.about {
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://innovat-nextjs.vercel.app/assets/images/banner/23.jpg');
+    background-position: center top;
+	background-size:cover;
+}
+.about-contant{
+    background-color:rgba(0,0,0,0.4);
+    position: absolute;
+    bottom: 40%;
+    text-align: center;
+    font-size: 3.5rem;
+    
+}
+
+.navTrigger {
+    display: none;
+}
+
+.nav {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+
+/* Media qurey section */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* .container {
+        margin: 0;
+    } */
+}
+
+@media screen and (max-width:768px) {
+    .about-contant ,h1{
+        bottom: 65%;
+        background-color:rgba(0,0,0,0);   
+        font-size: 1.2rem !important;        
+    
+    }
+    .about {
+        height: 40vh !important;
+    }
+    .navTrigger {
+        display: block;
+    }
+    .nav div.logo {
+        margin-left: 15px;
+    }
+    .nav div.main_list {
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+    .nav div.show_list {
+        height: auto;
+        display: none;
+    }
+    .nav div.main_list ul {
+        flex-direction: column;
+        width: 100%;
+        height: 40vh;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: #fff;
+        /*same background color of navbar*/
+        background-position: center top;
+    }
+    .nav div.main_list ul li {
+        width: 100%;
+        text-align: right;
+    }
+    .nav div.main_list ul li a {
+        text-align: start;
+        width: 100%;
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+    .nav div.media_button {
+        display: block;
+    }
+}
+
+
+/* Animation */
+/* Inspiration taken from Dicson https://codemyui.com/simple-hamburger-menu-x-mark-animation/ */
+
+.navTrigger {
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+
+.navTrigger i {
+    background-color: #000;
+    border-radius: 2px;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+}
+
+.navTrigger i:nth-child(1) {
+    -webkit-animation: outT 0.8s backwards;
+    animation: outT 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(2) {
+    margin: 5px 0;
+    -webkit-animation: outM 0.8s backwards;
+    animation: outM 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger i:nth-child(3) {
+    -webkit-animation: outBtm 0.8s backwards;
+    animation: outBtm 0.8s backwards;
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+.navTrigger.active i:nth-child(1) {
+    -webkit-animation: inT 0.8s forwards;
+    animation: inT 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(2) {
+    -webkit-animation: inM 0.8s forwards;
+    animation: inM 0.8s forwards;
+}
+
+.navTrigger.active i:nth-child(3) {
+    -webkit-animation: inBtm 0.8s forwards;
+    animation: inBtm 0.8s forwards;
+}
+
+@-webkit-keyframes inM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes inM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes outM {
+    50% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+    }
+}
+
+@keyframes outM {
+    50% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+@-webkit-keyframes inT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes inT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outT {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@keyframes outT {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes inBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes inBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@-webkit-keyframes outBtm {
+    0% {
+        -webkit-transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        -webkit-transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+@keyframes outBtm {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-9px) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-9px) rotate(135deg);
+    }
+}
+
+.affix {
+    padding: 0;
+    background-color: #fff;
+}
+
+/* services */
+.service{
+    overflow: hidden;
+  }
+  
+  .service img{
+    transform: scale(1.0);
+  }
+  .service img:hover{
+    transform: scale(1.1);
+    transition: 1s linear;
+  }
+  
+  .service1 {
+  height: 100% ;
+  background-color: #ffff;
+  box-shadow: 0px 10px 12px -7px black;
+  position: relative; 
+  bottom: 160px;
+  right: 6px;
+  width: 90%;     
+  transition: all 1s linear;
+}
+
+.service1:hover{
+   transform:translateY(10px);
+
+  }
+  .service1 a:hover{
+  color: #e4a6a6  !important;
+
+ }
+
+ .form-container {
+  max-width: 500px;
+  margin:auto;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(240, 6, 6, 0.1);
+}
+.form-container h1 {
+  font-family: 'Georgia', serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.form-container .btn-submit {
+  background-color: #f59c92;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+}
+.btn-submit:hover {
+  background-color: #f37970;
+}
+/* Parallax Section */
+.parallax {
+    height: 400px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    /* position: relative; */
+    color: white;
+    text-align: center;
+    /* filter: brightness(40%); */
+}
+
+.parallax-1 {
+    background-image: url('https://wallup.net/wp-content/uploads/2019/09/977459-interior-design-room-furniture-architecture-house-condo-apartment.jpg'); /* Replace with your image */
+}
+/* feedback */
+.divider_text {
+    font-size: 40px;
+    font-family: Quicksand, sans-serif;
+    display: flex;
+    align-items: center;
+    }
+    .divider_text::before, .divider_text::after {
+    flex: 1;
+    padding: 3px;
+    content: '';
+    background-color: burlywood;
+    margin: 5px;
+    }
+/* blog */
+ .picard{
+    -webkit-box-shadow: -1px 3px 16px -1px rgba(56,56,56,1);
+    -moz-box-shadow: -1px 3px 16px -1px rgba(56,56,56,1);
+    box-shadow: -1px 3px 16px -1px rgb(114, 108, 108);
+    transition: 0.4s linear;
+}
+    .picard:hover{
+    transform: translateY(-10.0px); 
+    -webkit-box-shadow: 10px 7px 28px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 7px 28px -7px rgba(0,0,0,0.75);
+    box-shadow: 10px 7px 28px -7px rgba(253, 251, 251, 0.75);
+} 
+.picard a:hover{
+    color: #714747  !important;
+
+}
+
+/* Footer styles */
+
+footer h4, footer h5 {
+    color: #FFF;
+    font-size: 1.5rem;
+    font-family: Quicksand, sans-serif;
+}
+
+footer a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: Quicksand, sans-serif;
+
+}
+
+footer a:hover {
+    color:burlywood;
+    text-decoration: none;
+}
+
+.social-icon {
+    font-size: 2rem;
+    color: #FFF;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: burlywood;
+}
+/* contact */
+
+
+
+.contact-us {
+    background-color: #f8f9fa;
+}
+
+.contact-us h1 {
+    font-size: 2.5rem;
+    font-family: Quicksand, sans-serif;
+
+}
+
+.contact-us h5 {
+    font-weight: bold;
+    font-family: Quicksand, sans-serif;
+
+}
+
+.contact-us ul {
+    padding: 0;
+    font-family: Quicksand, sans-serif;
+
+}
+
+.contact-us ul li {
+    margin-bottom: 0.5rem;
+    font-family: Quicksand, sans-serif;
+
+}
+
+.contact-us a {
+    color: #007bff;
+    text-decoration: none;
+    font-family: Quicksand, sans-serif;
+
+}
+
+.contact-us a:hover {
+    text-decoration: underline;
+}
